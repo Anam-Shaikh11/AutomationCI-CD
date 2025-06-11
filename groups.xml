@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel='tests' name="Suite">
+	
+<!-- Will not run before and after methods from the suite if not marked as group name -->	
+	<groups>
+		<run>
+			<include name="error_handling"></include>
+		</run>
+	</groups>
+	
+  <test thread-count="5" name="Positives">
+    <classes>
+      <class name="SeleniumFrameWork.FMSession1.TestFlow"/>
+     </classes>
+     </test>
+     
+     <test thread-count="5" name="Errors">
+		 <classes>
+      
+      <class name="SeleniumFrameWork.FMSession1.ErrorValidation"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
