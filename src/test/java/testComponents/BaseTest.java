@@ -39,7 +39,7 @@ public class BaseTest {
 		 */
 		//To get the path of the directory and make it work in any system
 		FileInputStream fis = new FileInputStream(
-				System.getProperty("user.dir")+"\\src\\main\\java\\Resources\\GlobalData.properties");
+				System.getProperty("user.dir")+"\\src\\main\\java\\Resourcses\\GlobalData.properties");
 		prop.load(fis);
 		String browser = prop.getProperty("browser");
 
