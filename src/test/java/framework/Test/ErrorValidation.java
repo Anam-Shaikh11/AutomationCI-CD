@@ -5,8 +5,8 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import SeleniumFrameWork.TestComponents.BaseTest;
-import SeleniumFrameWork.TestComponents.ReTryAnalyzer;
+import testComponents.BaseTest;
+import testComponents.ReTryAnalyzer;
 
 public class ErrorValidation extends BaseTest {
 

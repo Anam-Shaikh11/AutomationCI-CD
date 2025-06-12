@@ -14,7 +14,7 @@ import PageObject.Login_Page;
 import PageObject.OrderHistory;
 import PageObject.OrderSuccessful;
 import PageObject.ProductCat;
-import SeleniumFrameWork.TestComponents.BaseTest;
+import testComponents.BaseTest;
 
 public class Using_Json_For_HashMap extends BaseTest {
 

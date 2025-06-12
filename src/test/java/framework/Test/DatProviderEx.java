@@ -3,9 +3,9 @@
 import java.io.IOException;
 
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test
+import org.testng.annotations.Test;
 
-import testComponents.BaseTest;.BaseTest;.BaseTest;.BaseTest;BaseTest;;
+import testComponents.BaseTest;
 
 
 
@@ -36,6 +36,24 @@ public class DatProviderEx extends BaseTest {
 		order = os.getOrderRef();
 		history = os.clickOrdersPageFromOrderRefPage();
 	}
+	
+	@Test(dataProvider = "getData")
+	public void ecommerceApp1(String userName, String password, String prod) throws IOException {
+
+		PageObject.Login_Page page = launchApplication();
+		PageObject.ProductCat cat = page.login_app(userName, password);
+		cat.addProductToCart(prod);
+
+		PageObject.CartPage cp = cat.goToCartPage();
+		cp.getCartProductList(prod);
+		cp.matchProduct(prod);
+		PageObject.CheckOutPage ck = cp.clickCheckOut();
+		ck.inputCountryField("ind");
+		ck.getCountryListAndClick();
+		PageObject.OrderSuccessful os = ck.clickSubmit();
+		order = os.getOrderRef();
+		history = os.clickOrdersPageFromOrderRefPage();
+	}
 
 	/*
 	 * @Test//(dependsOnMethods = "ecommerceApp") public void TestOrderIsPresent()
@@ -49,6 +67,12 @@ public class DatProviderEx extends BaseTest {
 
 	@DataProvider
 	public Object[][] getData() {
+		return new Object[][] { { "shaikhanaamq@gmail.com", "Zavi@123", "ZARA COAT 3" },
+				{ "AnnieMany@gmail.com", "Annie@123", "ADIDAS ORIGINAL" } };
+	}
+	
+	@DataProvider
+	public Object[][] getData1() {
 		return new Object[][] { { "shaikhanaamq@gmail.com", "Zavi@123", "ZARA COAT 3" },
 				{ "AnnieMany@gmail.com", "Annie@123", "ADIDAS ORIGINAL" } };
 	}

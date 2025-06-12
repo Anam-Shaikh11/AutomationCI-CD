@@ -5,14 +5,12 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
-
 import PageObject.CartPage;
 import PageObject.CheckOutPage;
 import PageObject.Login_Page;
 import PageObject.OrderSuccessful;
 import PageObject.ProductCat;
-import SeleniumFrameWork.TestComponents.BaseTest;
+import testComponents.BaseTest;
 
 public class TestFlow extends BaseTest {
 
