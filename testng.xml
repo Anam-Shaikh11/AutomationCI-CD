@@ -6,11 +6,12 @@
 	</listeners>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="frameWorkPrac.FrameWorkPrac.TestFlow"/>
-      <class name="frameWorkPrac.FrameWorkPrac.DatProviderEx"/>
-      <class name="frameWorkPrac.FrameWorkPrac.Using_HashMap"/>
-      <class name="frameWorkPrac.FrameWorkPrac.Using_Json_For_HashMap"/>
-      <class name="frameWorkPrac.FrameWorkPrac.ErrorValidation"/>
+      <class name="framework.Test.TestFlow"/>
+       <class name="framework.Test.TestFlow2"/>
+      <class name="framework.Test.DatProviderEx"/>
+      <class name="framework.Test.Using_HashMap"/>
+      <class name="framework.Test.Using_Json_For_HashMap"/>
+      <class name="framework.Test.ErrorValidation"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
