@@ -15,6 +15,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -39,24 +40,37 @@ public class BaseTest {
 		 */
 		//To get the path of the directory and make it work in any system
 		FileInputStream fis = new FileInputStream(
-				System.getProperty("user.dir")+"\\src\\main\\java\\Resourcses\\GlobalData.properties");
+				System.getProperty("user.dir")+"\\src\\main\\java\\resourcses\\GlobalData.properties");
 		prop.load(fis);
-		String browser = prop.getProperty("browser");
+		
+		
+		//to take value from cmd/terminal while running maven command or else if not given then properties file
+		String browser = System.getProperty("browser")!=null ? System.getProperty("browser"): prop.getProperty("browser");
+		
+		
+		//String browser = prop.getProperty("browser");
 
-		if (browser.equalsIgnoreCase("chrome")) {
+		if (browser.contains("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions op= new ChromeOptions();
+			if (browser.contains("headless"))
+			 {
 			 op.addArguments("--headless=new");
 			 op.addArguments("--window-size=1920,1080");
+			 }
 			 driver= new ChromeDriver(op);
+			
 			 
 			
 		}
 		else if (browser.equalsIgnoreCase("FireFox")) {
-			
+			WebDriverManager.firefoxdriver().setup();
+			driver= new FirefoxDriver();
 		}
+		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
 		return driver;
 	}
 	
