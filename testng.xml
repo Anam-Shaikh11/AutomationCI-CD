@@ -7,7 +7,6 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="framework.Test.TestFlow"/>
-       <class name="framework.Test.TestFlow2"/>
       <class name="framework.Test.DatProviderEx"/>
       <class name="framework.Test.Using_HashMap"/>
       <class name="framework.Test.Using_Json_For_HashMap"/>
