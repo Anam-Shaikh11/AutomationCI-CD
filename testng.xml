@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="tests">
 	<listeners>
-		<listener class-name="SeleniumPractice.testComponents.Listen_Listeners"></listener>
+		<listener class-name="testComponents.Listen_Listeners"></listener>
 	</listeners>
   <test thread-count="5" name="Test">
     <classes>
