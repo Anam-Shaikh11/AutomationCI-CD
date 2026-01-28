@@ -1,6 +1,6 @@
 **Automation CI/CD**
 
-This repository demonstrates how to **automate** Selenium UI tests written in Java 8 using a CI/CD pipeline with Git and Jenkins.[1][2]
+This repository demonstrates how to **automate** Selenium UI tests written in Java 8 using a CI/CD pipeline with Git and Jenkins.
 
  Tech Stack
 
